@@ -4,7 +4,7 @@ from contextlib import asynccontextmanager
 
 from app.core.config import settings
 from app.core.database import engine, Base
-from app.api.v1 import auth, media, scrape, transfer, player
+from app.api.v1 import auth, media, scrape, transfer, player, dashboard, strm, tasks, auth_115
 
 
 @asynccontextmanager
@@ -28,10 +28,14 @@ app.add_middleware(
 )
 
 app.include_router(auth.router, prefix="/api/v1/auth", tags=["认证"])
+app.include_router(auth_115.router, prefix="/api/v1/auth", tags=["115登录"])
 app.include_router(media.router, prefix="/api/v1/media", tags=["媒体"])
 app.include_router(scrape.router, prefix="/api/v1/scrape", tags=["削刮"])
 app.include_router(transfer.router, prefix="/api/v1/transfer", tags=["转存"])
 app.include_router(player.router, prefix="/api/v1/player", tags=["播放"])
+app.include_router(dashboard.router, prefix="/api/v1/dashboard", tags=["面板"])
+app.include_router(strm.router, prefix="/api/v1/strm", tags=["STRM"])
+app.include_router(tasks.router, prefix="/api/v1/tasks", tags=["任务"])
 
 
 @app.get("/health")

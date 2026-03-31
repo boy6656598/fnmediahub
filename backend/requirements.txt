@@ -12,3 +12,6 @@ webdavclient3==3.14.6
 beautifulsoup4==4.12.3
 lxml==5.1.0
 python-dotenv==1.0.1
+apscheduler==3.10.4
+pillow==10.2.0
+qrcode==7.4.2

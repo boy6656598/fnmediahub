@@ -6,6 +6,7 @@ import 'ant-design-vue/dist/reset.css'
 import App from './App.vue'
 
 import Login from './views/Login.vue'
+import Dashboard from './views/Dashboard.vue'
 import Home from './views/Home.vue'
 import AddLinks from './views/AddLinks.vue'
 import MediaDetail from './views/MediaDetail.vue'
@@ -13,8 +14,9 @@ import Player from './views/Player.vue'
 import Settings from './views/Settings.vue'
 
 const routes = [
-  { path: '/', redirect: '/home' },
+  { path: '/', redirect: '/dashboard' },
   { path: '/login', name: 'Login', component: Login },
+  { path: '/dashboard', name: 'Dashboard', component: Dashboard },
   { path: '/home', name: 'Home', component: Home },
   { path: '/add-links', name: 'AddLinks', component: AddLinks },
   { path: '/media/:id', name: 'MediaDetail', component: MediaDetail },

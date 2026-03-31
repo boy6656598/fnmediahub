@@ -11,6 +11,7 @@ services:
     volumes:
       - ./data:/app/data
       - ./data/downloads:/app/downloads
+      - ./data/strm:/app/strm
     environment:
       - DATABASE_URL=sqlite:///app/data/media.db
       - SECRET_KEY=${SECRET_KEY:-change-this-secret-key-in-production}
